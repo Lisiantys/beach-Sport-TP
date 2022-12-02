@@ -1,0 +1,22 @@
+1. La requêtes crée une base de donnée nommée "soccer", 
+dans le seul cas ou elle n'existe pas.
+
+utf8 : détermine le codage des caractères de manières à accepter les caractères spéciaux.
+
+USE : détermine la base donnée utilisée, dans notre cas "soccer".
+
+
+2.La requete crée une table nommée "arenas" dans notre base de donnée "soccer".
+
+Elle a pour id : "areanaid" le champs ne peut etre null.
+Dès qu'une valeur est crée, on attribu un int = 1 qui s'incrémente de +1 automatoiquement 
+à chaque nouvelle lignes/ enregistrement effectué dans la Base de donnée. 
+
+"arena" est un string/varchar qui ne peut etre null, lors de la création d'un enregistrement.
+varchar(255), signifie que la chaine de caractères acceptées doit etre égale ou inférieur à 255.
+
+Primary key: permet de crée un identifiant unique à chaque champ d'une colonne d'un table. Ici "arenaid".
+
+L'interet d'une clée et de créer des liens avec d'autres tables ultérieurement.
+
+3.Cette requete insert dans la table "arena" les URL de localisation des arènes.
