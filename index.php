@@ -47,27 +47,36 @@
 
                 <?php
                     $arenaList = new ViewArenas();
+                    //On crée une instance
                     $rows = $arenaList->getArenas();
+                    //On rècupère la tableau
                    
                    // print_r($rows[1]["arena"]);
+                   //le print_r : retourne l'arène avec son lien gmap
                 ?>
 
                 <select id="arenaList">
                     <?php
                         foreach($rows as $row){
                             echo "<option value='" . $row["arenaid"] . "'>" . $row["arena"] . "</option>";
-                        }
+                        } 
                     ?>   
                 </select>
  
                 <script>
-                    $( "#arenaList" )
+
+                    $( "#arenaList" ) //on aaccède à notre liste d'option
                     .change(function() {
                         var str = "";
+                        //On accède au option de la liste
                         $( "#arenaList option:selected" ).each(function() {
+
+                            //on recupère la chaine de caractère sélectionné de nos options, on stock dans la variable str. 
                         str += $( this ).text();
                         });
+                          //on retourne la variable dans notre balise .returnArena
                         $( ".returnArena" ).text( str );
+                        // Problème rencontré : les arènes sont retournées sans leur lien gmap.
                     })
                     .trigger( "change" );
                     </script>
